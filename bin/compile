@@ -3,9 +3,9 @@
 BUILD_DIR=$1
 MAGICK_DIR=/etc/ImageMagick-6
 
-if [ -f $MAGICK_DIR/policy.xml ]; then
-  echo "-----> Skipping as .magick/policy.xml already exists"
-else
+# if [ -f $MAGICK_DIR/policy.xml ]; then
+#  echo "-----> Skipping as .magick/policy.xml already exists"
+#else
   echo "-----> Writing ImageMagick policy file"
   mkdir -p $MAGICK_DIR
   cat > $MAGICK_DIR/policy.xml <<EOF
@@ -22,4 +22,4 @@ else
   <policy domain="coder" rights="none" pattern="XPS" />
 </policymap>
 EOF
-fi
+#fi
